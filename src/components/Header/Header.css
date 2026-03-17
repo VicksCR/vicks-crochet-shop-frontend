@@ -1,0 +1,83 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 7px;
+}
+
+.header__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.header__logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.header__line {
+  width: 100%;
+}
+
+/*
+.header__user-info {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__email {
+  width: auto;
+  font-family: "InterMedium";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  padding-right: 10px;
+}
+
+.header__logout-button {
+  background: none;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  border: none;
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header__logout-button:hover {
+  opacity: 0.6;
+}*/
+
+@media screen and (max-width: 768px) {
+  .header__logo {
+    max-width: 115px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header__logo {
+    width: 70px;
+    height: auto;
+  }
+
+  /*
+  .header__email {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .header__logout-button {
+    font-size: 14px;
+  }*/
+}

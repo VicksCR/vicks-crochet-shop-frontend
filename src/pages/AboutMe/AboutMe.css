@@ -1,0 +1,24 @@
+.aboutMe__container {
+  max-width: 95%;
+  height: auto;
+  margin: 35px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  box-sizing: border-box;
+}
+
+/*AboutHero*/
+
+@media (max-width: 768px) {
+  .aboutMe__values-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .aboutMe__values-products-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,27 @@
+@font-face {
+  src: url(./fonts/SansitaSwashed-Light.woff2) format("woff2");
+  font-family: "SansitaRegular";
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  src: url(./fonts/SansitaSwashed-Medium.woff2) format("woff2");
+  font-family: "SansitaMedium";
+  font-size: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  src: url(./fonts/SansitaSwashed-ExtraBold.woff2) format("woff2");
+  font-family: "SansitaExtraBold";
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  src: url(./fonts/berkshire-swash-v22-latin-regular.woff2) format("woff2");
+  font-family: "BerkshireSwash";
+  font-style: normal;
+  font-weight: 900;
+}

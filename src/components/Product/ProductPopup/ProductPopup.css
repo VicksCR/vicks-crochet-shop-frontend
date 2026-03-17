@@ -1,0 +1,96 @@
+.productPopup__image {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.productPopup__name {
+  max-width: 300px;
+  font-family: "SansitaMedium";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  color: #92007a;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: auto;
+  text-align: center;
+}
+
+.productPopup__description,
+.productPopup__size,
+.productPopup__category,
+.productPopup__price {
+  font-family: "SansitaRegular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0;
+  padding-bottom: 12px;
+}
+
+.productPopup__container-btns {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "SansitaRegular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  padding-top: 15px;
+}
+
+.productPopup__btn {
+  width: 100px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.productPopup__cart-icon {
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.productPopup__cart-icon:hover {
+  opacity: 0.4;
+}
+
+.productPopup__like-icon {
+  display: block;
+  background-image: url(../../../assets/icons/heart-icon.svg);
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.3s ease;
+}
+
+.productPopup__like-icon:hover {
+  opacity: 0.3;
+}
+
+.productPopup__like-icon_active {
+  background-image: url(../../../assets/icons/heart-icon-active.svg);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  transition: 0.3s;
+}

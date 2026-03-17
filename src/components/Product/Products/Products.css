@@ -1,0 +1,47 @@
+.products__container {
+  max-width: 95%;
+  margin: 30px auto;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.products__container-title {
+  font-family: "BerkshireSwash";
+  font-style: normal;
+  font-size: 35px;
+  font-weight: 900;
+  line-height: 29px;
+  color: #e200b2;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  padding: 10px;
+}
+
+.products__catalog-link-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+}
+
+.products__catalog-link {
+  font-family: "BerkshireSwash";
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 29px;
+  color: #be8bbe;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.products__catalog-link:hover {
+  color: #923c92;
+  font-weight: bold;
+}

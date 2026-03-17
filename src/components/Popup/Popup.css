@@ -1,0 +1,58 @@
+.popup {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.popup__opened {
+  display: flex;
+}
+
+.popup__container {
+  width: min(500px, 90vw);
+  max-height: 90vh;
+  position: relative;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__close-btn {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  cursor: pointer;
+  border: none;
+  color: #e200b2;
+  font-family: "SansitaExtraBold";
+  font-size: 20px;
+  font-weight: 800;
+  background: transparent;
+  padding: 0;
+}
+
+.popup__close-btn:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/*REVISAR ESTILOS DE TITLE PARA POPUP EN GENERAL*/
+.popup__title {
+  max-width: 300px;
+  font-family: "SansitaMedium";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  color: #92007a;
+  padding-top: 15px;
+  margin: auto;
+}

@@ -1,0 +1,67 @@
+.aboutButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.aboutButtons__title {
+  font-family: "SansitaExtraBold";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 28px;
+  color: #92007a;
+  margin: 10px;
+  text-align: center;
+}
+
+.aboutButtons__subtitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.aboutButtons__btn-container {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.aboutButtons__btn {
+  max-width: 300px;
+  max-height: 70px;
+  padding: 7px;
+  box-shadow: 5px 5px 10px #00000040;
+  border: none;
+  border-radius: 4px;
+  font-family: "SansitaRegular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.aboutMe__btn:hover {
+  opacity: 0.8;
+}
+
+.aboutButtons__catalog {
+  background-color: #ce00b5;
+}
+
+.aboutButtons__order {
+  background-color: #d781d0;
+}
+
+@media screen and (max-width: 425px) {
+  .aboutButtons__title {
+    font-size: 26px;
+  }
+
+  .aboutButtons__subtitle {
+    font-size: 18px;
+    text-align: center;
+  }
+}

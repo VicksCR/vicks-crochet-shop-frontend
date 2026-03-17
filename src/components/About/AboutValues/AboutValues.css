@@ -1,0 +1,54 @@
+.aboutValues__container {
+  font-family: "SansitaRegular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.aboutValues__title {
+  font-family: "SansitaExtraBold";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 28px;
+  color: #92007a;
+  margin: 0 0 25px;
+  text-align: center;
+}
+
+.aboutValues__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.aboutValues__value {
+  background: #f6f2ff;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.aboutValues__value h3 {
+  margin: 0 0 6px;
+  color: #92007a;
+}
+
+.aboutValues__value p {
+  margin: 0;
+}
+
+@media screen and (max-width: 425px) {
+  .aboutValues__title {
+    font-size: 26px;
+  }
+
+  .aboutValues__value h3 {
+    font-size: 16px;
+  }
+
+  .aboutValues__value p {
+    font-size: 12px;
+  }
+}

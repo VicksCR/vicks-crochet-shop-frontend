@@ -1,0 +1,76 @@
+.aboutHero__container {
+  max-width: 95%;
+  height: auto;
+  background-color: #f6f2ff;
+  border-radius: 50px;
+  border: 10px solid #f7cdf9;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 30px;
+}
+
+.aboutHero__image {
+  max-width: 260px;
+  height: auto;
+  border-radius: 45% 0% 20% 5%;
+  border: 10px solid #f7cdf9;
+  margin: 0;
+  object-fit: cover;
+}
+
+.aboutHero__story {
+  font-family: "SansitaRegular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.aboutHero__title {
+  font-family: "BerkshireSwash";
+  font-style: italic;
+  font-weight: 900;
+  font-size: 35px;
+  color: #e200b2;
+  margin: auto;
+}
+
+.aboutHero__subtitle {
+  font-family: "SansitaMedium";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: #92007a;
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 425px) {
+  .aboutHero__container {
+    border-radius: 30px;
+    border: 5px solid #f7cdf9;
+    gap: 0px;
+  }
+
+  .aboutHero__image {
+    max-width: 100px;
+    max-height: auto;
+    border-radius: 20% 20% 20% 20%;
+    border: 5px solid #f7cdf9;
+  }
+
+  .aboutHero__story {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .aboutHero__title {
+    font-size: 26px;
+    margin: 15px;
+  }
+
+  .aboutHero__subtitle {
+    font-size: 16px;
+    margin: 10px;
+  }
+}

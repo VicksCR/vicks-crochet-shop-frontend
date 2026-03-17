@@ -1,0 +1,101 @@
+.productCard {
+  max-width: 250px;
+  width: 100%;
+  max-height: 360px;
+  height: 100%;
+  border-radius: 15px;
+  background-color: #c3f8f7;
+  position: relative;
+  cursor: pointer;
+}
+
+.productCard__image {
+  max-width: 250px;
+  width: 100%;
+  max-height: 250px;
+  height: 100%;
+  object-fit: contain;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.productCard__group {
+  max-width: 220px;
+  width: 100%;
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.productCard__name {
+  margin: 0;
+  padding: 3px;
+  color: #92007a;
+}
+
+.productCard__price {
+  margin: 0;
+  padding: 3px;
+  color: #87067a;
+}
+
+.productCard__btn-container {
+  max-width: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 7px;
+}
+
+.productCard__btn-more-info {
+  max-width: 100px;
+  width: 100%;
+  max-height: 35px;
+  box-shadow: 3px 3px 6px #00000040;
+  border: none;
+  border-radius: 4px;
+  font-family: "SansitaRegular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+  background-color: #e200b2;
+  cursor: pointer;
+}
+
+.productCard__btn-more-info:hover {
+  opacity: 0.6;
+}
+
+.productCard__btn-like {
+  background-image: url(../../../assets/icons/heart-icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 21px;
+  height: 19px;
+  transition: opacity 0.3s ease;
+}
+
+.productCard__btn-like:hover {
+  opacity: 0.6;
+}
+
+.productCard__btn-like_active {
+  background-image: url(../../../assets/icons/heart-icon-active.svg);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 21px;
+  height: 19px;
+  transition: 0.3s;
+}
