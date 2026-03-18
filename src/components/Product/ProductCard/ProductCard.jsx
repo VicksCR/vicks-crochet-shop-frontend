@@ -18,12 +18,18 @@ export default function ProductCard({
     open();
   };
 
+  const imageSrc = product.image.startsWith("http")
+    ? product.image
+    : `/imagesCatalog/${product.image}`;
+
   return (
     <div className="productCard">
       {/* 1) Click en imagen abre popup */}
       <img
         className="productCard__image"
-        src={`/imagesCatalog/${product.image}`}
+        src={imageSrc}
+        //{product.image}
+        //{`/imagesCatalog/${product.image}`}
         alt={product.alt}
         onClick={open}
         role="button"

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Products.css";
+import "./ProductsSection.css";
 import ProductCard from "../ProductCard/ProductCard.jsx";
 import ProductPopup from "../ProductPopup/ProductPopup.jsx";
 
@@ -9,9 +9,10 @@ export default function Products({
   productsList,
   sectionId = "products",
   showCatalogLink = false,
+  likedIds,
+  setLikedIds,
 }) {
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [likedIds, setLikedIds] = useState(() => new Set());
 
   const handleOpenPopup = (product) => {
     setSelectedProduct(product);

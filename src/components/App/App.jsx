@@ -1,5 +1,4 @@
-import { useState } from "react";
-//import reactLogo from "./assets/react.svg"; //Eliminar, usar de ejemplo
+import { useState, useEffect } from "react";
 import "./App.css";
 import {
   Routes,
@@ -26,7 +25,7 @@ import Contact from "../../pages/Contact/Contact.jsx";
 
 
 
-import Products from "./Products/Products.jsx";
+import Products from "./Products/ProductsSection.jsx";
 import About from "./About/About.jsx";
 import Contact from "./Contact/Contact.jsx";
 
@@ -46,6 +45,18 @@ function addToCart(product) {
   setCart((prev) => [...prev, product]);
 }
   */
+  const [likedIds, setLikedIds] = useState(new Set());
+
+  useEffect(() => {
+    const saved = localStorage.getItem("likes");
+    if (saved) {
+      setLikedIds(new Set(JSON.parse(saved)));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("likes", JSON.stringify([...likedIds]));
+  }, [likedIds]);
 
   return (
     <div className="app">
@@ -55,7 +66,7 @@ function addToCart(product) {
           path="/"
           element={
             <Main>
-              <Home />
+              <Home likedIds={likedIds} setLikedIds={setLikedIds} />
             </Main>
           }
         />
@@ -63,7 +74,7 @@ function addToCart(product) {
           path="/products"
           element={
             <Main>
-              <ProductsCatalog />
+              <ProductsCatalog likedIds={likedIds} setLikedIds={setLikedIds} />
             </Main>
           }
         />
