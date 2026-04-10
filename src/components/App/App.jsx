@@ -1,104 +1,112 @@
-import { useState, useEffect } from "react";
-import "./App.css";
+import { useState, useEffect, use } from "react";
+import { getProducts } from "../../utils/ThirdPartyApi.js";
+import { transformProducts } from "../../utils/transformProducts.js";
+import { products as localProducts } from "../../data/products.js";
 import {
-  Routes,
-  Route,
-  Navigate,
-  useNavigate,
-  useLocation,
-  BrowserRouter,
-} from "react-router-dom";
+  ERROR_MESSAGE,
+  PRODUCTS_STORAGE_KEY,
+  LIKES_STORAGE_KEY,
+} from "../../utils/constants";
 
-/*import * as auth from "../utils/auth.js";
-import api from "../utils/api.js";
-*/
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+
 import Header from "../Header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
 
 import Main from "../Main/Main.jsx";
 import Home from "../../pages/Home/Home.jsx";
-import ProductsCatalog from "../../pages/Products-Catalog/Products-Catalog.jsx";
+import ProductsCatalog from "../../pages/ProductsCatalog/ProductsCatalog.jsx";
 import AboutMe from "../../pages/AboutMe/AboutMe.jsx";
 import Contact from "../../pages/Contact/Contact.jsx";
 
-/*
-
-
-
-import Products from "./Products/ProductsSection.jsx";
-import About from "./About/About.jsx";
-import Contact from "./Contact/Contact.jsx";
-
-import Login from "../components/Main/components/Login/Login.jsx"; //SI DA TIMEPO
-import Register from "../components/Main/components/Register/Register.jsx"; //SI DA TIEMPO
-import InfoToolTip from "../components/Main/components/InfoToolTip/InfoToolTip.jsx";
-import Preloader from "../components/Preloader/Preloader.jsx"; //TALVEZ NO VA AQUI
-import ProtectedRoute from "../components/Main/components/ProtectedRoute/ProtectedRoute.jsx";
-import CurrentUserContext from "../contexts/CurrentUserContext.js";
-//REVISAR QUE RUTAS SI VAN AQUI Y CUALES NO
-//REVISAR SI browserRouter VA AQUI O EN main.jsx
-*/
 function App() {
-  /*const [cart, setCart] = useState([]);
-  
-function addToCart(product) {
-  setCart((prev) => [...prev, product]);
-}
-  */
-  const [likedIds, setLikedIds] = useState(new Set());
+  const [likedIds, setLikedIds] = useState(() => {
+    try {
+      const savedLikes = localStorage.getItem(LIKES_STORAGE_KEY);
+      if (!savedLikes) return new Set();
+
+      const parsed = JSON.parse(savedLikes);
+
+      return Array.isArray(parsed) ? new Set(parsed) : new Set();
+    } catch (error) {
+      console.error("Error parsing likedIds from localStorage:", error);
+      return new Set();
+    }
+  });
 
   useEffect(() => {
-    const saved = localStorage.getItem("likes");
-    if (saved) {
-      setLikedIds(new Set(JSON.parse(saved)));
+    localStorage.setItem(LIKES_STORAGE_KEY, JSON.stringify([...likedIds]));
+  }, [likedIds]);
+
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const savedProducts = localStorage.getItem(PRODUCTS_STORAGE_KEY);
+
+    if (savedProducts) {
+      const parsedProducts = JSON.parse(savedProducts);
+      setProducts(parsedProducts);
+      setIsLoading(false);
+      return;
     }
+
+    loadProducts();
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("likes", JSON.stringify([...likedIds]));
-  }, [likedIds]);
+  function loadProducts() {
+    setIsLoading(true);
+    setError("");
+
+    getProducts()
+      .then((data) => {
+        const formattedProducts = transformProducts(data.products);
+
+        setProducts(formattedProducts);
+        localStorage.setItem(
+          PRODUCTS_STORAGE_KEY,
+          JSON.stringify(formattedProducts),
+        );
+      })
+      .catch((err) => {
+        console.error(err);
+
+        const fallbackProducts = transformProducts(localProducts);
+
+        setProducts(fallbackProducts);
+        setError(ERROR_MESSAGE);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }
 
   return (
     <div className="app">
       <Header />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Main>
-              <Home likedIds={likedIds} setLikedIds={setLikedIds} />
-            </Main>
-          }
-        />
-        <Route
-          path="/products"
-          element={
-            <Main>
-              <ProductsCatalog likedIds={likedIds} setLikedIds={setLikedIds} />
-            </Main>
-          }
-        />
-        <Route
-          path="/about-me"
-          element={
-            <Main>
-              <AboutMe />
-            </Main>
-          }
-        />
-        <Route
-          path="/contact"
-          element={
-            <Main>
-              <Contact />
-            </Main>
-          }
-        />
-        {/*
-          /* Rutas para login y registro, si se implementan 
-          <Route path="/signin" element={<Login />} />
-          <Route path="/signup" element={<Register />} /> 
-          */}
+        <Route element={<Main />}>
+          <Route
+            path="/"
+            element={<Home likedIds={likedIds} setLikedIds={setLikedIds} />}
+          />
+          <Route
+            path="/products"
+            element={
+              <ProductsCatalog
+                likedIds={likedIds}
+                setLikedIds={setLikedIds}
+                products={products}
+                isLoading={isLoading}
+                error={error}
+              />
+            }
+          />
+          <Route path="/about-me" element={<AboutMe />} />
+          <Route path="/contact" element={<Contact />} />
+        </Route>
       </Routes>
 
       <Footer />
@@ -107,42 +115,3 @@ function addToCart(product) {
 }
 
 export default App;
-
-//EJEMPLO A FUTURO
-/*import { useState } from "react";
-
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-
-import Home from "./pages/Home/Home";
-
-import ProductPopup from "./components/ProductPopup/ProductPopup";
-
-function App() {
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  function handleProductClick(product) {
-    setSelectedProduct(product);
-  }
-
-  function closeAllPopups() {
-    setSelectedProduct(null);
-  }
-
-  return (
-    <div className="app">
-      <Header />
-
-      <Home onProductClick={handleProductClick} />
-
-      <ProductPopup
-        product={selectedProduct}
-        onClose={closeAllPopups}
-      />
-
-      <Footer />
-    </div>
-  );
-}
-
-export default App;*/

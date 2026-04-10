@@ -1,0 +1,166 @@
+.customOrder__container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.customOrder__header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.customOrder__title {
+  font-family: "SansitaExtraBold";
+  font-weight: 800;
+  font-size: 26px;
+  color: #92007a;
+  margin-bottom: 10px;
+}
+
+.customOrder__text {
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.customOrder__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.customOrder__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.customOrder__label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.customOrder__label_full {
+  grid-column: 1 / -1;
+}
+
+.customOrder__label-text {
+  font-family: "SansitaMedium";
+  font-weight: 600;
+  font-size: 15px;
+  color: #92007a;
+}
+
+.customOrder__input {
+  border: 2px solid #f7cdf9;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-family: inherit;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.customOrder__input:focus {
+  outline: none;
+  border-color: #92007a;
+}
+
+.customOrder__textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.customOrder__file-input {
+  padding: 12px;
+}
+
+.customOrder__help {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.customOrder__preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.customOrder__preview-card {
+  border-radius: 16px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px #00000015;
+}
+
+.customOrder__preview-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.customOrder__remove-btn {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  background: #f7cdf9;
+  cursor: pointer;
+}
+
+.customOrder__actions {
+  display: flex;
+  justify-content: center;
+}
+
+.customOrder__submit-btn {
+  min-width: 220px;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font: inherit;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #d781d0;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.customOrder__submit-btn:hover {
+  opacity: 0.8;
+}
+
+.customOrder__submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.customOrder__message.success {
+  color: green;
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+}
+
+.customOrder__message.error {
+  color: red;
+  margin: 0;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .customOrder__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customOrder__preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customOrder__title {
+    font-size: 28px;
+  }
+}

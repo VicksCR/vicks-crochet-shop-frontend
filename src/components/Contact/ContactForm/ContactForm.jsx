@@ -8,27 +8,47 @@ export default function ContactForm() {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   function handleChange(e) {
     const { name, value } = e.target;
 
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
-    });
+    }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    console.log("Formulario enviado:", formData);
+    if (!emailRegex.test(formData.email)) {
+      setSubmitMessage("Por favor introduce un email válido.");
+      return;
+    }
 
-    // aquí luego puedes conectar EmailJS o backend
+    try {
+      setIsSubmitting(true);
+      setSubmitMessage("");
 
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+      console.log("Formulario enviado:", formData);
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+
+      setSubmitMessage("Mensaje enviado con éxito");
+    } catch (error) {
+      console.error(error);
+      setSubmitMessage("Error al enviar el mensaje");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -36,45 +56,59 @@ export default function ContactForm() {
       <h2 className="contactForm__title">O Escríbeme un mensaje</h2>
 
       <form className="contactForm__form" onSubmit={handleSubmit}>
-        <label className="contactForm__label">
-          Nombre
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="contactForm__input"
-            required
-          />
-        </label>
+        <div className="contactForm__grid">
+          <label className="contactForm__label">
+            <span className="contactForm__label-text">Nombre</span>
+            <input
+              className="contactForm__input"
+              type="text"
+              name="name"
+              placeholder="Tu nombre completo"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </label>
 
-        <label className="contactForm__label">
-          Email
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="contactForm__input"
-            required
-          />
-        </label>
+          <label className="contactForm__label">
+            <span className="contactForm__label-text">Email</span>
+            <input
+              className="contactForm__input"
+              type="email"
+              name="email"
+              placeholder="tucorreo@email.com"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </label>
 
-        <label className="contactForm__label">
-          Mensaje
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            className="contactForm__textarea"
-            rows="4"
-            required
-          />
-        </label>
+          <label className="contactForm__label contactForm__label_full">
+            <span className="contactForm__label-text">Mensaje</span>
+            <textarea
+              className="contactForm__input contactForm__textarea"
+              name="message"
+              placeholder="Ecribe aquí tu comentario, duda o reseña"
+              value={formData.message}
+              onChange={handleChange}
+              rows="4"
+              required
+            />
+          </label>
+        </div>
 
-        <button type="submit" className="contactForm__button">
-          Enviar mensaje
+        <button
+          type="submit"
+          className="contactForm__submit-btn"
+          disabled={isSubmitting}
+          aria-busy={isSubmitting}
+        >
+          {isSubmitting ? "Enviando.." : "Enviar mensaje"}
         </button>
+
+        {submitMessage && (
+          <p className="contactForm__message">{submitMessage}</p>
+        )}
       </form>
     </section>
   );

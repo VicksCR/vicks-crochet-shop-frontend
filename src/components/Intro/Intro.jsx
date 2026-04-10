@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Intro.css";
 import IntroImage from "../../assets/images/conejito-intro.png";
 
@@ -19,12 +20,15 @@ export default function Intro() {
         </p>
 
         <div className="intro__btn-container">
-          <button type="button" className="intro__btn intro__btn-catalog">
+          <Link to="/products" className="intro__btn intro__btn-catalog">
             Ver catálogo
-          </button>
-          <button type="button" className="intro__btn intro__btn-order">
+          </Link>
+          <Link
+            to="/contact#custom-order-form"
+            className="intro__btn intro__btn-order"
+          >
             Ordena tu pieza personalizada
-          </button>
+          </Link>
         </div>
       </div>
 

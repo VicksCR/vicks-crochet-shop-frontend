@@ -37,12 +37,7 @@ export default function Products({
 
   return (
     <section className="products__container" id={sectionId}>
-      <h2 className="products__container-title">Productos Destacados</h2>
-      {/*<p className="content__paragraph-products">
-            Descubre nuestra selección de productos hechos a mano, desde
-            amigurumis adorables hasta accesorios de moda únicos. Cada pieza
-            está cuidadosamente elaborada con amor y atención al detalle.
-          </p>*/}
+      <h2 className="products__container-title">{title}</h2>
       <section className="products__grid">
         {productsList.map((product) => (
           <ProductCard
@@ -54,6 +49,7 @@ export default function Products({
           />
         ))}
       </section>
+
       <div className="products__catalog-link-container">
         {showCatalogLink && (
           <Link to="/products" className="products__catalog-link">

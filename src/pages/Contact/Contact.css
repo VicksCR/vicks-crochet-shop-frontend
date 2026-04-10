@@ -1,0 +1,28 @@
+.contact__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact__title {
+  font-family: "BerkshireSwash";
+  font-weight: 900;
+  font-size: 35px;
+  color: #e200b2;
+  text-align: center;
+  margin: auto;
+}
+
+.contact__subtitle {
+  font-family: "SansitaMedium";
+  font-weight: 600;
+  font-size: 26px;
+  color: #92007a;
+  margin: 10px 0;
+  text-align: center;
+}

@@ -15,31 +15,28 @@ export default function ProductPopup({
     }
   };
 
+  const imageSrc =
+    typeof product?.image === "string" && product.image.startsWith("http")
+      ? product.image
+      : `/imagesCatalog/${product?.image || "fallback.png"}`;
+
   return (
     <Popup isOpen={!!product} onClose={onClose}>
       {product && (
         <>
           <img
             className="productPopup__image"
-            src={`/imagesCatalog/${product.image}`}
+            src={imageSrc}
             alt={product.alt}
           />
           <h3 className="productPopup__name">{product.name}</h3>
           <p className="productPopup__description">{product.description} </p>
           <p className="productPopup__size">Tamaño: {product.size}</p>
           <p className="productPopup__category">
-            Categoria: {product.category}
+            Categoría: {product.category}
           </p>
           <p className="productPopup__price">Precio: {product.price}</p>
-          {/*
-            <a
-        href={`https://wa.me/123456789?text=Hola quiero ordenar ${product.name}`}
-        target="_blank"
-      >
-        Ordenar por WhatsApp
-      </a>
-    </Popup>
-          */}
+
           <div className="productPopup__container-btns">
             <button
               className="productPopup__btn"
@@ -51,11 +48,8 @@ export default function ProductPopup({
                 src={CartIcon}
                 alt="Icono de carrito de compras"
               />
-              {/*<button onClick={() => addToCart(product)}>
-  Añadir al carrito
-</button>*/}
             </button>
-            {/* Like toggle */}
+
             <button
               className="productPopup__btn"
               onClick={handleLikeClick}

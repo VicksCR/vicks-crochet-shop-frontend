@@ -1,9 +1,8 @@
 .navigation {
-  width: 100%;
+  min-width: 100vw;
   text-align: center;
-  list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 0;
   margin: 0;
 }
@@ -14,31 +13,27 @@
   cursor: pointer;
   font-family: "BerkshireSwash";
   font-style: normal;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 20px;
   line-height: 24px;
 }
 
 .navigation__link:hover {
   color: #923c92;
-  font-weight: bold;
 }
 
 .navigation__link_active {
   color: #923c92;
+  font-weight: 700;
   text-decoration: underline;
-  font-weight: bold;
+}
+
+.navigation__link:focus {
+  outline: 2px solid #923c92;
+  outline-offset: 2px;
 }
 
 @media screen and (max-width: 425px) {
-  /*
- PA PONER DESPUES CON PAGINA EN CEL 
-
-.nav__icon-menu {
-  width: 20px;
-  height: auto;
-}
-  */
   .navigation__link {
     font-size: 16px;
   }
@@ -46,6 +41,6 @@
 
 @media screen and (max-width: 375px) {
   .navigation__link {
-    font-size: 12px;
+    font-size: 14px;
   }
 }

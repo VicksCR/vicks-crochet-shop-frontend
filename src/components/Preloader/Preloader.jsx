@@ -1,15 +1,10 @@
 import "./Preloader.css";
 
 export default function Preloader() {
-  return <i className="circle-preloader"></i>;
-}
-
-/*export default function Preloader() {
   return (
     <div className="preloader">
-      <div className="preloader__spinner"></div>
+      <i className="preloader__circle"></i>
       <p className="preloader__text">Cargando...</p>
     </div>
   );
 }
-*/

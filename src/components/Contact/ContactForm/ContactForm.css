@@ -1,3 +1,102 @@
+.contactForm__container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.contactForm__title {
+  font-family: "SansitaExtraBold";
+  font-weight: 800;
+  font-size: 26px;
+  color: #92007a;
+  text-align: center;
+}
+
+.contactForm__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactForm__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.contactForm__label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contactForm__label_full {
+  grid-column: 1 / -1;
+}
+
+.contactForm__label-text {
+  font-family: "SansitaMedium";
+  font-weight: 600;
+  font-size: 15px;
+  color: #92007a;
+}
+
+.contactForm__input {
+  border: 2px solid #f7cdf9;
+  border-radius: 14px;
+  padding: 16px 18px;
+  font-family: inherit;
+  background-color: #fff;
+}
+
+.contactForm__input:focus {
+  outline: none;
+  border-color: #92007a;
+}
+
+.contactForm__textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.contactForm__submit-btn {
+  align-self: center;
+  min-width: 220px;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font: inherit;
+  cursor: pointer;
+  font-family: "SansitaRegular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  background-color: #d781d0;
+}
+
+.contactForm__submit-btn:hover {
+  opacity: 0.8;
+}
+
+.contactForm__submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+  .contactForm__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contactForm__title {
+    font-size: 28px;
+  }
+}
+
 /*
 .contactForm__container {
   max-width: 600px;

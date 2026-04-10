@@ -57,6 +57,7 @@
   line-height: 20px;
   color: #ffffff;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .intro__btn:hover {
@@ -100,7 +101,7 @@
 @media screen and (max-width: 425px) {
   .intro__catalog-order {
     justify-content: center;
-    max-height: 360px;
+    min-height: 400px;
     margin: 20px auto;
     padding: 10px;
     gap: 10px;

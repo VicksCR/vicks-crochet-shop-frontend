@@ -41,6 +41,7 @@
   line-height: 20px;
   color: #ffffff;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .aboutMe__btn:hover {

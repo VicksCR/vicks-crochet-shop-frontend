@@ -7,7 +7,7 @@ export default function Navigation() {
   };
   return (
     <nav className="navigation">
-      <NavLink to="/" className={customClassName}>
+      <NavLink to="/" end className={customClassName}>
         Inicio
       </NavLink>
       <NavLink to="/products" className={customClassName}>
