@@ -47,8 +47,8 @@
   border: 2px solid #f7cdf9;
   border-radius: 14px;
   padding: 16px 18px;
-  font-family: inherit;
   background-color: #fff;
+  transition: border-color 0.2s ease;
 }
 
 .contactForm__input:focus {
@@ -93,64 +93,6 @@
   }
 
   .contactForm__title {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
-
-/*
-.contactForm__container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.contactForm__title {
-  text-align: center;
-  margin-bottom: 24px;
-  font-size: 28px;
-  font-weight: 600;
-}
-
-.contactForm__form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.contactForm__label {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  gap: 6px;
-}
-
-.contactForm__input,
-.contactForm__textarea {
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  font-size: 14px;
-}
-
-.contactForm__input:focus,
-.contactForm__textarea:focus {
-  outline: none;
-  border-color: #a47acb;
-}
-
-.contactForm__button {
-  margin-top: 10px;
-  padding: 14px;
-  border: none;
-  border-radius: 12px;
-  background-color: #a47acb;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.contactForm__button:hover {
-  opacity: 0.9;
-}
-*/

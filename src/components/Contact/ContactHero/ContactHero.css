@@ -21,3 +21,23 @@
   margin: 0;
   opacity: 0.9;
 }
+
+@media screen and (max-width: 426px) {
+  .contactHero__subtitle {
+    font-size: 22px;
+  }
+
+  .contactHero__text {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .contactHero__subtitle {
+    font-size: 20px;
+  }
+
+  .contactHero__text {
+    font-size: 12px;
+  }
+}

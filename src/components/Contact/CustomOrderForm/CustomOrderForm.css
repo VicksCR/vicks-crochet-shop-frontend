@@ -1,12 +1,9 @@
 .customOrder__container {
   width: 100%;
   max-width: 1100px;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
-}
-
-.customOrder__header {
-  text-align: center;
-  margin-bottom: 10px;
 }
 
 .customOrder__title {
@@ -14,13 +11,14 @@
   font-weight: 800;
   font-size: 26px;
   color: #92007a;
-  margin-bottom: 10px;
+  text-align: center;
 }
 
 .customOrder__text {
   font-size: 16px;
   line-height: 1.5;
   opacity: 0.9;
+  text-align: center;
 }
 
 .customOrder__form {
@@ -33,12 +31,13 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
+  margin-top: 10px;
 }
 
 .customOrder__label {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .customOrder__label_full {
@@ -53,10 +52,11 @@
 }
 
 .customOrder__input {
+  width: 100%;
+  box-sizing: border-box;
   border: 2px solid #f7cdf9;
-  border-radius: 12px;
-  padding: 14px 16px;
-  font-family: inherit;
+  border-radius: 14px;
+  padding: 16px 18px;
   background-color: #fff;
   transition: border-color 0.2s ease;
 }
@@ -67,8 +67,10 @@
 }
 
 .customOrder__textarea {
-  min-height: 160px;
+  min-height: 100px;
   resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .customOrder__file-input {
@@ -115,18 +117,20 @@
 }
 
 .customOrder__submit-btn {
+  align-self: center;
   min-width: 220px;
   border: none;
   border-radius: 999px;
   padding: 14px 24px;
   font: inherit;
-  border: none;
   cursor: pointer;
-  color: #fff;
+  font-family: "SansitaRegular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
   background-color: #d781d0;
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
 }
 
 .customOrder__submit-btn:hover {
@@ -161,6 +165,10 @@
   }
 
   .customOrder__title {
-    font-size: 28px;
+    font-size: 24px;
+  }
+
+  .customOrder__text {
+    font-size: 14px;
   }
 }

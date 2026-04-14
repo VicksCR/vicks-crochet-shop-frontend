@@ -21,7 +21,7 @@
 }
 
 .aboutButtons__btn-container {
-  width: 70%;
+  min-width: 100%;
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
@@ -58,11 +58,20 @@
 
 @media screen and (max-width: 425px) {
   .aboutButtons__title {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .aboutButtons__subtitle {
     font-size: 18px;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .aboutButtons__title {
+    font-size: 22px;
+  }
+  .aboutButtons__subtitle {
+    font-size: 16px;
   }
 }

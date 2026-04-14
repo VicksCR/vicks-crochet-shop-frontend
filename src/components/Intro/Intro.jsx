@@ -11,11 +11,6 @@ export default function Intro() {
         </h1>
 
         <p className="intro__paragraph">
-          {/*} En Chacharitas VCR, nos apasiona el arte del tejido y la creación de
-            hermosas piezas hechas a mano. Aquí encontrarás todo lo que
-            necesitas para dar vida a tus ideas creativas. Echale un vistazo a
-            nuestro catálogo de productos o ordena ya tu pieza totalmente
-            personalizada.*/}
           Piezas únicas hechas con amor y dedicación para ti.
         </p>
 
