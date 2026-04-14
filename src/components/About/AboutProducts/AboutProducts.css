@@ -58,10 +58,19 @@
 
 @media screen and (max-width: 425px) {
   .aboutProducts__title {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .aboutProducts__image {
     height: 300px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .aboutProducts__title {
+    font-size: 22px;
+  }
+  .aboutProducts__image {
+    height: 200px;
   }
 }

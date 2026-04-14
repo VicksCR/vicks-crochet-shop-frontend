@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./AboutButtons.css";
 
 export default function AboutButtons() {
@@ -10,12 +11,18 @@ export default function AboutButtons() {
         Explora el catálogo o contáctame para crear algo único para ti.
       </p>
       <div className="aboutButtons__btn-container">
-        <button className="aboutButtons__btn aboutButtons__catalog">
+        <Link
+          to="/products"
+          className="aboutButtons__btn aboutButtons__catalog"
+        >
           Ver catálogo
-        </button>
-        <button className="aboutButtons__btn aboutButtons__order">
+        </Link>
+        <Link
+          to="/contact#custom-order-form"
+          className="aboutButtons__btn aboutButtons__order"
+        >
           Ordenar pieza
-        </button>
+        </Link>
       </div>
     </div>
   );

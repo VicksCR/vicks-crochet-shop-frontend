@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     name: "Amigurumi Doc Strange",
-    price: "$25.00",
+    price: 25,
     image: "dr-strange.png",
     alt: "Amigurumi de personaje Doc Strange",
     description:
@@ -15,7 +15,7 @@ export const products = [
   {
     id: 2,
     name: "Snoopy para pastel de cumpleaños",
-    price: "$20.00",
+    price: 20,
     image: "snoopy-pasta.png",
     alt: "Snoopy en pasta francesa",
     description:
@@ -28,7 +28,7 @@ export const products = [
   {
     id: 3,
     name: "Amigurumi Sailor Moon",
-    price: "$30.00",
+    price: 30,
     image: "sailor-moon.png",
     alt: "Amigurumi de Sailor Moon",
     description:
@@ -41,7 +41,7 @@ export const products = [
   {
     id: 4,
     name: "Mafalda con nombre personalizado",
-    price: "$30.00",
+    price: 30,
     image: "mafalda-pasta.jpg",
     alt: "Mafalda con nombre personalizado",
     description:
@@ -54,7 +54,7 @@ export const products = [
   {
     id: 5,
     name: "Amigurumi Lumiere",
-    price: "$30.00",
+    price: 30,
     image: "lumiere-crochet.png",
     alt: "Amigurumi de Lumiere",
     description:
@@ -67,7 +67,7 @@ export const products = [
   {
     id: 6,
     name: "Figura de pasta personalizada",
-    price: "$30.00",
+    price: 30,
     image: "fig-personalizada1.png",
     alt: "Figura de pasta personalizada",
     description:
@@ -80,7 +80,7 @@ export const products = [
   {
     id: 7,
     name: "Amigurumi de Snoopy",
-    price: "$30.00",
+    price: 30,
     image: "snoopy-crochet.png",
     alt: "Amigurumi de Snoopy",
     description:
@@ -93,7 +93,7 @@ export const products = [
   {
     id: 8,
     name: "Figura de pasta personalizada",
-    price: "$30.00",
+    price: 30,
     image: "fig-pers-2.png",
     alt: "Figura de pasta personalizada",
     description:
@@ -106,7 +106,7 @@ export const products = [
   {
     id: 9,
     name: "Amigurumi de Jack Skellington con calabaza",
-    price: "$30.00",
+    price: 30,
     image: "jack-crochet.png",
     alt: "Amigurumi de Jack Skellington con calabaza",
     description:
@@ -118,7 +118,7 @@ export const products = [
   {
     id: 10,
     name: "Figura de pasta de Sailor Moon",
-    price: "$30.00",
+    price: 30,
     image: "sailor-pasta.jpg",
     alt: "Figura de pasta de Sailor Moon",
     description:
@@ -130,7 +130,7 @@ export const products = [
   {
     id: 11,
     name: "Amigurumi de Conejito para recien nacidos",
-    price: "$30.00",
+    price: 30,
     image: "conejito-intro.png",
     alt: "Amigurumi de Conejito para recien nacidos",
     description:
@@ -143,7 +143,7 @@ export const products = [
   {
     id: 12,
     name: "Figura personalizada de una motocicleta",
-    price: "$30.00",
+    price: 30,
     image: "moto-pasta.png",
     alt: "Figura personalizada de una motocicleta",
     description:

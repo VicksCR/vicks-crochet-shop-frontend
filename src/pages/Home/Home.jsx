@@ -1,11 +1,11 @@
 import Intro from "../../components/Intro/Intro.jsx";
-import Products from "../../components/Product/Products/Products.jsx";
-import { products } from "../../data/productsApi.js";
+import Products from "../../components/Product/Products/ProductsSection.jsx";
+import { products } from "../../data/products.js";
 
-export default function Home() {
+export default function Home({ likedIds, setLikedIds }) {
   const featuredProducts = products
     .filter((product) => product.featured)
-    .slice(0, 3); // Limitar a 3 productos destacados
+    .slice(0, 3);
 
   return (
     <>
@@ -13,24 +13,11 @@ export default function Home() {
       <Products
         title="Productos Destacados"
         productsList={featuredProducts}
+        likedIds={likedIds}
+        setLikedIds={setLikedIds}
         sectionId="products"
         showCatalogLink={true}
       />
     </>
   );
 }
-
-//EJEMPLO BASE NO OFICIAL A FUTURO
-/*import Products from "../../components/Products/Products";
-
-export default function Home({ onProductClick }) {
-  return (
-    <main className="content">
-      <section className="intro">
-        <h1>Hecho a mano con amor</h1>
-      </section>
-
-      <Products onProductClick={onProductClick} />
-    </main>
-  );
-}*/

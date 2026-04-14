@@ -41,7 +41,7 @@
 
 @media screen and (max-width: 425px) {
   .aboutValues__title {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .aboutValues__value h3 {
@@ -50,5 +50,11 @@
 
   .aboutValues__value p {
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .aboutValues__title {
+    font-size: 22px;
   }
 }

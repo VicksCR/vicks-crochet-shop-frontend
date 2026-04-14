@@ -7,13 +7,12 @@
 
 .products__container-title {
   font-family: "BerkshireSwash";
-  font-style: normal;
   font-size: 35px;
   font-weight: 900;
   line-height: 29px;
   color: #e200b2;
   text-align: center;
-  margin: 20px auto;
+  margin: 15px auto;
 }
 
 .products__grid {
@@ -32,7 +31,6 @@
 
 .products__catalog-link {
   font-family: "BerkshireSwash";
-  font-style: normal;
   font-size: 20px;
   font-weight: 800;
   line-height: 29px;
@@ -44,4 +42,34 @@
 .products__catalog-link:hover {
   color: #923c92;
   font-weight: bold;
+}
+
+@media screen and (max-width: 426px) {
+  .products__container-title {
+    font-size: 24px;
+    margin: 10px auto;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .products__grid {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .products__grid {
+    grid-template-columns: repeat(1, minmax(250px, 1fr));
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .products__container {
+    margin: 20px auto;
+  }
+
+  .products__container-title {
+    font-size: 22px;
+    margin: 0 auto;
+  }
 }

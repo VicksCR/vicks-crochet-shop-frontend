@@ -9,8 +9,6 @@
   box-sizing: border-box;
 }
 
-/*AboutHero*/
-
 @media (max-width: 768px) {
   .aboutMe__values-list {
     grid-template-columns: 1fr;
@@ -20,5 +18,12 @@
 @media (max-width: 900px) {
   .aboutMe__values-products-container {
     grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .aboutMe__container {
+    margin: 15px auto;
+    gap: 30px;
   }
 }

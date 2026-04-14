@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Intro.css";
 import IntroImage from "../../assets/images/conejito-intro.png";
 
@@ -10,21 +11,19 @@ export default function Intro() {
         </h1>
 
         <p className="intro__paragraph">
-          {/*} En Chacharitas VCR, nos apasiona el arte del tejido y la creación de
-            hermosas piezas hechas a mano. Aquí encontrarás todo lo que
-            necesitas para dar vida a tus ideas creativas. Echale un vistazo a
-            nuestro catálogo de productos o ordena ya tu pieza totalmente
-            personalizada.*/}
           Piezas únicas hechas con amor y dedicación para ti.
         </p>
 
         <div className="intro__btn-container">
-          <button type="button" className="intro__btn intro__btn-catalog">
+          <Link to="/products" className="intro__btn intro__btn-catalog">
             Ver catálogo
-          </button>
-          <button type="button" className="intro__btn intro__btn-order">
+          </Link>
+          <Link
+            to="/contact#custom-order-form"
+            className="intro__btn intro__btn-order"
+          >
             Ordena tu pieza personalizada
-          </button>
+          </Link>
         </div>
       </div>
 

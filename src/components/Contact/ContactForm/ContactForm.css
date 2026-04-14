@@ -1,57 +1,98 @@
-/*
 .contactForm__container {
-  max-width: 600px;
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
-  padding: 40px 20px;
 }
 
 .contactForm__title {
+  font-family: "SansitaExtraBold";
+  font-weight: 800;
+  font-size: 26px;
+  color: #92007a;
   text-align: center;
-  margin-bottom: 24px;
-  font-size: 28px;
-  font-weight: 600;
 }
 
 .contactForm__form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
+}
+
+.contactForm__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .contactForm__label {
   display: flex;
   flex-direction: column;
-  font-size: 14px;
-  gap: 6px;
+  gap: 8px;
 }
 
-.contactForm__input,
-.contactForm__textarea {
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  font-size: 14px;
+.contactForm__label_full {
+  grid-column: 1 / -1;
 }
 
-.contactForm__input:focus,
-.contactForm__textarea:focus {
+.contactForm__label-text {
+  font-family: "SansitaMedium";
+  font-weight: 600;
+  font-size: 15px;
+  color: #92007a;
+}
+
+.contactForm__input {
+  border: 2px solid #f7cdf9;
+  border-radius: 14px;
+  padding: 16px 18px;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.contactForm__input:focus {
   outline: none;
-  border-color: #a47acb;
+  border-color: #92007a;
 }
 
-.contactForm__button {
-  margin-top: 10px;
-  padding: 14px;
+.contactForm__textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.contactForm__submit-btn {
+  align-self: center;
+  min-width: 220px;
   border: none;
-  border-radius: 12px;
-  background-color: #a47acb;
-  color: white;
-  font-size: 16px;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font: inherit;
   cursor: pointer;
-  transition: 0.2s;
+  font-family: "SansitaRegular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  background-color: #d781d0;
 }
 
-.contactForm__button:hover {
-  opacity: 0.9;
+.contactForm__submit-btn:hover {
+  opacity: 0.8;
 }
-*/
+
+.contactForm__submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+  .contactForm__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contactForm__title {
+    font-size: 24px;
+  }
+}

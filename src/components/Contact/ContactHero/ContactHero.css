@@ -1,0 +1,43 @@
+.contactHero__container {
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+.contactHero__subtitle {
+  font-family: "SansitaMedium";
+  font-weight: 600;
+  font-size: 26px;
+  color: #92007a;
+  margin: 0;
+}
+
+.contactHero__text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 426px) {
+  .contactHero__subtitle {
+    font-size: 22px;
+  }
+
+  .contactHero__text {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .contactHero__subtitle {
+    font-size: 20px;
+  }
+
+  .contactHero__text {
+    font-size: 12px;
+  }
+}

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import "./Popup.css";
 
-//puede faltar variant = "", revisar popup del proyecto 18 pa ver que falta con respecto a esto
 export default function Popup({ isOpen, onClose, title, children }) {
   useEffect(() => {
     if (!isOpen) return;
@@ -23,12 +22,6 @@ export default function Popup({ isOpen, onClose, title, children }) {
   };
 
   if (!isOpen) return null;
-  /* PARA VARIANTES DE POPUP COMO REGISTER O LOGIN, SE PUEDE AGREGAR UNA CLASE CON EL NOMBRE DE LA VARIANTE AL CONTENEDOR DEL POPUP, Y LUEGO USAR CSS PARA DARLE ESTILOS ESPECÍFICOS A CADA VARIANTE. POR EJEMPLO:
-  const containerClass = `popup__container 
-    ${variant ? `popup__container-${variant}` : ""} 
-    ${!title ? "popup__container-image" : ""}
-  `.trim();
-  */
   return (
     <div
       className={`popup ${isOpen ? "popup__opened" : ""}`}

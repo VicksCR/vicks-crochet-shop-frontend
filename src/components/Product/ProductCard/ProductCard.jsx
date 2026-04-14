@@ -18,43 +18,50 @@ export default function ProductCard({
     open();
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      open();
+    }
+  };
+
+  const imageSrc = product.image.startsWith("http")
+    ? product.image
+    : `/imagesCatalog/${product.image}`;
+
   return (
     <div className="productCard">
-      {/* 1) Click en imagen abre popup */}
       <img
         className="productCard__image"
-        src={`/imagesCatalog/${product.image}`}
+        src={imageSrc}
         alt={product.alt}
         onClick={open}
+        onKeyDown={handleKeyDown}
         role="button"
         tabIndex={0}
       />
 
-      {/* 2) Click en el contenedor de texto abre popup */}
       <div className="productCard__group">
         <h3
           className="productCard__name"
           onClick={open}
+          onKeyDown={handleKeyDown}
           role="button"
           tabIndex={0}
         >
           {product.name}
         </h3>
+
         <p
           className="productCard__price"
           onClick={open}
+          onKeyDown={handleKeyDown}
           role="button"
           tabIndex={0}
         >
           {product.price}
-          {/*{new Intl.NumberFormat("en-USD", {
-            style: "currency",
-            currency: "USD",
-          }).format(product.price)}*/}
         </p>
 
         <div className="productCard__btn-container">
-          {/* 3) Click en “Ver más” abre popup */}
           <button
             className="productCard__btn-more-info"
             type="button"
@@ -63,7 +70,6 @@ export default function ProductCard({
             Ver más
           </button>
 
-          {/* Like toggle */}
           <button
             type="button"
             className={`productCard__btn-like ${isLiked ? "productCard__btn-like_active" : ""}`}

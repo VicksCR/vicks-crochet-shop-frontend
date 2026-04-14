@@ -1,8 +1,8 @@
 import "./AboutProducts.css";
-import crochet from "../../../../public/imagesCatalog/ramo-personalizado-crochet.png";
-import pasta from "../../../../public/imagesCatalog/pasta.jpg";
-import custom from "../../../../public/imagesCatalog/custom-pasta.png";
-import decor from "../../../../public/imagesCatalog/decoraciones.jpg";
+const crochet = "/imagesCatalog/ramo-personalizado-crochet.png";
+const pasta = "/imagesCatalog/pasta.jpg";
+const custom = "/imagesCatalog/custom-pasta.png";
+const decor = "/imagesCatalog/decoraciones.jpg";
 export default function AboutProducts() {
   return (
     <section className="aboutProducts">
